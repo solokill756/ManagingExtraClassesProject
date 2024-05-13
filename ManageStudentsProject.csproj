@@ -96,6 +96,12 @@
     <Compile Include="frmDSHomeWork.Designer.cs">
       <DependentUpon>frmDSHomeWork.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHomeWorkOfStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHomeWorkOfStudent.Designer.cs">
+      <DependentUpon>frmHomeWorkOfStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSHomeWork.resx">
       <DependentUpon>frmDSHomeWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHomeWorkOfStudent.resx">
+      <DependentUpon>frmHomeWorkOfStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

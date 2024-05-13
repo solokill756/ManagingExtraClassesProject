@@ -79,6 +79,7 @@ namespace ManageStudentsProject
             dvgDangkiLophoc.Columns["name"].HeaderText = "Tên lớp học";
             dvgDangkiLophoc.Columns["status"].HeaderText = "Trạng thái";
             dvgDangkiLophoc.Columns["TyLeDangKy"].HeaderText = "Số lượng";
+            dvgDangkiLophoc.Columns["NgayDangKy"].HeaderText = "Ngày đăng ký";
 
         }
 
@@ -115,6 +116,7 @@ namespace ManageStudentsProject
             dvgDangkiLophoc.Columns["name"].HeaderText = "Tên lớp học";
             dvgDangkiLophoc.Columns["status"].HeaderText = "Trạng thái";
             dvgDangkiLophoc.Columns["soLuong"].HeaderText = "Số lượng";
+            dvgDangkiLophoc.Columns["NgayDangKy"].HeaderText = "Ngày đăng ký";
         }
     }
 }

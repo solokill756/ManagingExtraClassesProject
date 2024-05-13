@@ -105,5 +105,11 @@ namespace ManageStudentsProject
 
           
         }
+
+        private void NopBaiTapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmHomeWorkOfStudent(taikhoan);
+            AddForm(f);
+        }
     }
 }

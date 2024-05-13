@@ -37,10 +37,10 @@
             this.BaiTapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LopHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TroGiupTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.NopBaiTapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DangKiLopHocToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.LopDaDangKyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,21 +121,12 @@
             this.TroGiupTToolStripMenuItem.Size = new System.Drawing.Size(94, 29);
             this.TroGiupTToolStripMenuItem.Text = "Trợ Giúp";
             // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.White;
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(0, 33);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1719, 495);
-            this.pnlContent.TabIndex = 1;
-            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
-            // 
             // NopBaiTapToolStripMenuItem
             // 
             this.NopBaiTapToolStripMenuItem.Name = "NopBaiTapToolStripMenuItem";
             this.NopBaiTapToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
             this.NopBaiTapToolStripMenuItem.Text = "Bài tập";
+            this.NopBaiTapToolStripMenuItem.Click += new System.EventHandler(this.NopBaiTapToolStripMenuItem_Click);
             // 
             // DangKiLopHocToolStripMenuItem
             // 
@@ -150,6 +141,16 @@
             this.LopDaDangKyToolStripMenuItem.Size = new System.Drawing.Size(95, 29);
             this.LopDaDangKyToolStripMenuItem.Text = "Lớp Học";
             this.LopDaDangKyToolStripMenuItem.Click += new System.EventHandler(this.LopDaDangKyToolStripMenuItem_Click);
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.White;
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(0, 33);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1719, 495);
+            this.pnlContent.TabIndex = 1;
+            this.pnlContent.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContent_Paint);
             // 
             // frmMain
             // 

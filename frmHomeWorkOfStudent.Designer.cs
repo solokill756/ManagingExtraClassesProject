@@ -34,6 +34,7 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.listClass = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnXemDiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBaiTap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -106,11 +107,23 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Lớp học";
             // 
+            // btnXemDiem
+            // 
+            this.btnXemDiem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnXemDiem.Location = new System.Drawing.Point(227, 38);
+            this.btnXemDiem.Name = "btnXemDiem";
+            this.btnXemDiem.Size = new System.Drawing.Size(120, 37);
+            this.btnXemDiem.TabIndex = 7;
+            this.btnXemDiem.Text = "Xem Điểm";
+            this.btnXemDiem.UseVisualStyleBackColor = true;
+            this.btnXemDiem.Click += new System.EventHandler(this.btnXemDiem_Click);
+            // 
             // frmHomeWorkOfStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1062, 545);
+            this.Controls.Add(this.btnXemDiem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listClass);
             this.Controls.Add(this.btnTimKiem);
@@ -134,5 +147,6 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox listClass;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnXemDiem;
     }
 }

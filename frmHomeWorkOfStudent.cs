@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,7 +96,45 @@ namespace ManageStudentsProject
 
         private void dgvBaiTap_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            if (e.RowIndex >= 0)
+            {
+                var hwId = dgvBaiTap.Rows[e.RowIndex].Cells["id"].Value.ToString();
+                try
+                {
+                    // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
+                    string dateEndString = dgvBaiTap.Rows[e.RowIndex].Cells["DateEnd"].Value.ToString();
+                    DateTime dateEnd = DateTime.ParseExact(dateEndString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    if (DateTime.Now > dateEnd)
+                    {
+                        MessageBox.Show("Đã quá ngày để nộp bài");
+                        return;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    // Handle the case where the string cannot be parsed to a DateTime
+                    MessageBox.Show("Invalid date format: " + ex.Message);
+                }
+                try
+                {
+                    // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
+                    string dateStartString = dgvBaiTap.Rows[e.RowIndex].Cells["DateStart"].Value.ToString();
+                    DateTime dateStart = DateTime.ParseExact(dateStartString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                    if (dateStart > DateTime.Now)
+                    {
+                        MessageBox.Show("Bài tập [ " + dgvBaiTap.Rows[e.RowIndex].Cells["name"].Value.ToString() + " ] chưa mở");
+                        return;
+                    }
+                }
+                catch (FormatException ex)
+                {
+                    // Handle the case where the string cannot be parsed to a DateTime
+                    MessageBox.Show("Invalid date format: " + ex.Message);
+                }
+                new NopBaiTap(hwId , mahs , dgvBaiTap.Rows[e.RowIndex].Cells["link"].Value.ToString()).ShowDialog();
+                listClass.SelectedIndex = -1;
+                loadDSHomeWork();
+            }
         }
 
         private void listClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -143,7 +182,7 @@ namespace ManageStudentsProject
                     dgvBaiTap.Columns["name"].HeaderText = "Tên Bài tập";
                     dgvBaiTap.Columns["dateStart"].HeaderText = "Ngày bắt đầu";
                     dgvBaiTap.Columns["author"].HeaderText = "Tác giả";
-                    dgvBaiTap.Columns["link"].HeaderText = "Link tải bài tập";
+                    dgvBaiTap.Columns["link"].HeaderText = "Link tải bài tập";                        
                     dgvBaiTap.Columns["dateEnd"].HeaderText = "Ngày kết thúc";
                     dgvBaiTap.Columns["TrangThai"].HeaderText = "Tình trạng";
                 }
@@ -153,6 +192,12 @@ namespace ManageStudentsProject
 
                 loadDSHomeWork();
             }
+
+        }
+
+        private void btnXemDiem_Click(object sender, EventArgs e)
+        {
+            new XemDiem(mahs).ShowDialog();
 
         }
     }

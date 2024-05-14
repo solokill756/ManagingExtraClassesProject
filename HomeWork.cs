@@ -68,7 +68,7 @@ namespace ManageStudentsProject
                 txtTacGia.Text = r["author"].ToString();
                 txtNgayBatDau.Text = r["dateStart"].ToString();
                 txtNgayKetThuc.Text = r["dateEnd"].ToString();
-                txtLinkBaiTap.Text = r["link"].ToString();
+                txtLinkBaiTap.Text = r["LinkBaiTap"].ToString();
                 lstClass.SelectedValue = r["class_id"].ToString();
             }
 

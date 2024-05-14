@@ -37,7 +37,7 @@ namespace ManageStudentsProject
             else if(loaitk.Equals("hs"))
             {
                 quảnLíToolStripMenuItem.Visible = false;
-                TroGiupTToolStripMenuItem.Visible = false;
+                ChamDiemToolStripMenuItem.Visible = false;
                 frmWelcome f = new frmWelcome();
                 AddForm(f);
                 return;
@@ -62,7 +62,18 @@ namespace ManageStudentsProject
 
         private void thoatToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            frmDangNhap fn = new frmDangNhap();
+
+            fn.Show();
+            Application.Restart();
+
+
+
+            // Đóng form chính
+
+
+
         }
 
         private void hocSinhToolStripMenuItem_Click(object sender, EventArgs e)

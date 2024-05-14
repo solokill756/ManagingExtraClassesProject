@@ -57,6 +57,7 @@
             this.txtLop.Name = "txtLop";
             this.txtLop.Size = new System.Drawing.Size(274, 26);
             this.txtLop.TabIndex = 1;
+            this.txtLop.TextChanged += new System.EventHandler(this.txtLop_TextChanged);
             // 
             // contextMenuStrip1
             // 

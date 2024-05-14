@@ -99,38 +99,7 @@ namespace ManageStudentsProject
             if (e.RowIndex >= 0)
             {
                 var hwId = dgvBaiTap.Rows[e.RowIndex].Cells["id"].Value.ToString();
-                try
-                {
-                    // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
-                    string dateEndString = dgvBaiTap.Rows[e.RowIndex].Cells["DateEnd"].Value.ToString();
-                    DateTime dateEnd = DateTime.ParseExact(dateEndString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    if (DateTime.Now > dateEnd)
-                    {
-                        MessageBox.Show("Đã quá ngày để nộp bài");
-                        return;
-                    }
-                }
-                catch (FormatException ex)
-                {
-                    // Handle the case where the string cannot be parsed to a DateTime
-                    MessageBox.Show("Invalid date format: " + ex.Message);
-                }
-                try
-                {
-                    // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
-                    string dateStartString = dgvBaiTap.Rows[e.RowIndex].Cells["DateStart"].Value.ToString();
-                    DateTime dateStart = DateTime.ParseExact(dateStartString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-                    if (dateStart > DateTime.Now)
-                    {
-                        MessageBox.Show("Bài tập [ " + dgvBaiTap.Rows[e.RowIndex].Cells["name"].Value.ToString() + " ] chưa mở");
-                        return;
-                    }
-                }
-                catch (FormatException ex)
-                {
-                    // Handle the case where the string cannot be parsed to a DateTime
-                    MessageBox.Show("Invalid date format: " + ex.Message);
-                }
+               
                 new NopBaiTap(hwId , mahs , dgvBaiTap.Rows[e.RowIndex].Cells["link"].Value.ToString()).ShowDialog();
                 listClass.SelectedIndex = -1;
                 loadDSHomeWork();

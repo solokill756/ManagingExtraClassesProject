@@ -32,6 +32,19 @@ namespace ManageStudentsProject
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+            if(string.IsNullOrEmpty(txtLop.Text.ToString().Trim())) {
+                MessageBox.Show("Mời bạn nhập tên lớp !");
+                txtLop.Select();
+                return;
+            }
+
+            if (string.IsNullOrEmpty(txtSoluong.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập số lượng !");
+                txtSoluong.Select();
+                return;
+            }
             string sql = "";
             List<SqlParameter> lstPara = new List<SqlParameter>();
             if(string.IsNullOrEmpty(ClassId.ToString()))
@@ -136,6 +149,11 @@ namespace ManageStudentsProject
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void txtLop_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

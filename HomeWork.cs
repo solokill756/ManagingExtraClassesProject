@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace ManageStudentsProject
 {
@@ -77,6 +78,36 @@ namespace ManageStudentsProject
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtTenBt.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtTenBt.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtTacGia.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtTacGia.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtNgayKetThuc.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtNgayKetThuc.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtNgayBatDau.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtNgayBatDau.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtLinkBaiTap.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtLinkBaiTap.Select();
+                return;
+            }
             string sql = "";
             List<SqlParameter> lstPara = new List<SqlParameter>();
             DateTime ngayBatDau, ngayKetThuc;

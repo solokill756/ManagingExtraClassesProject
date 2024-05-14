@@ -79,6 +79,41 @@ namespace ManageStudentsProject
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtName.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtName.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtPhone.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtPhone.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtage.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtage.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtGmail.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtGmail.Select();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtAddress.Text.ToString().Trim()))
+            {
+                MessageBox.Show("Mời bạn nhập vào ô này !");
+                txtAddress.Select();
+                return;
+            }
+            if (!rbtNam.Checked && !rbtNu.Checked)
+            {
+                MessageBox.Show("Vui lòng chọn giới tính.");
+                return;
+            }
             string sql = "";
             string name = txtName.Text;
             string address = txtAddress.Text;  

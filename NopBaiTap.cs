@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,7 +64,39 @@ namespace ManageStudentsProject
 
         private void btnNopBai_Click(object sender, EventArgs e)
         {
-            
+            var r = new DataBase().Select("selectHomeWork '" + stt + "'");
+            try
+            {
+                // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
+                string dateEndString = r["DateEnd"].ToString();
+                DateTime dateEnd = DateTime.ParseExact(dateEndString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                if (DateTime.Now > dateEnd)
+                {
+                    MessageBox.Show("Đã quá ngày để nộp bài");
+                    return;
+                }
+            }
+            catch (FormatException ex)
+            {
+                // Handle the case where the string cannot be parsed to a DateTime
+                MessageBox.Show("Invalid date format: " + ex.Message);
+            }
+            try
+            {
+                // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
+                string dateStartString = r["DateStart"].ToString();
+                DateTime dateStart = DateTime.ParseExact(dateStartString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                if (dateStart > DateTime.Now)
+                {
+                    MessageBox.Show("Bài tập [ " + r["name"].ToString() + " ] chưa mở");
+                    return;
+                }
+            }
+            catch (FormatException ex)
+            {
+                // Handle the case where the string cannot be parsed to a DateTime
+                MessageBox.Show("Invalid date format: " + ex.Message);
+            }
             List<SqlParameter> lstPara = new List<SqlParameter>();
             lstPara.Add(new SqlParameter()
             {

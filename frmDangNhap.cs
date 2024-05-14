@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,8 +61,16 @@ namespace ManageStudentsProject
 
             }
 
-            List<SqlParameter> lstPara = new List<SqlParameter>();
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(txtMatKhau.Text);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string hasPass = "";
+            foreach(byte b in hasData)
+            {
+                hasPass += b;
+            }
 
+            List<SqlParameter> lstPara = new List<SqlParameter>();
+            
             lstPara.Add(new SqlParameter()
             {
                 ParameterName = "@loaitaikhoan",
@@ -79,7 +88,7 @@ namespace ManageStudentsProject
             lstPara.Add(new SqlParameter()
             {
                 ParameterName = "@matkhau",
-                SqlValue = txtMatKhau.Text,
+                SqlValue = hasPass,
                 SqlDbType = SqlDbType.VarChar
             });
 
@@ -100,6 +109,11 @@ namespace ManageStudentsProject
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
         }
     }
 }

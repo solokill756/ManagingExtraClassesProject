@@ -66,6 +66,12 @@
     <Compile Include="frmChamDiem.Designer.cs">
       <DependentUpon>frmChamDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChiTietBaiNopCuaHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChiTietBaiNopCuaHS.Designer.cs">
+      <DependentUpon>frmChiTietBaiNopCuaHS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmclass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,18 @@
     </Compile>
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDanhSachHocSinhNopBai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDanhSachHocSinhNopBai.Designer.cs">
+      <DependentUpon>frmDanhSachHocSinhNopBai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoiMatKhau.Designer.cs">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDSClass.cs">
       <SubType>Form</SubType>
@@ -155,6 +173,9 @@
     <EmbeddedResource Include="frmChamDiem.resx">
       <DependentUpon>frmChamDiem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmChiTietBaiNopCuaHS.resx">
+      <DependentUpon>frmChiTietBaiNopCuaHS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmclass.resx">
       <DependentUpon>frmclass.cs</DependentUpon>
     </EmbeddedResource>
@@ -163,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDanhSachHocSinhNopBai.resx">
+      <DependentUpon>frmDanhSachHocSinhNopBai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoiMatKhau.resx">
+      <DependentUpon>frmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSClass.resx">
       <DependentUpon>frmDSClass.cs</DependentUpon>

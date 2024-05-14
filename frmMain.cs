@@ -27,7 +27,6 @@ namespace ManageStudentsProject
             if(loaitk.Equals("admin"))
             {
                 NopBaiTapToolStripMenuItem.Visible = false;
-                LopDaDangKyToolStripMenuItem.Visible = false;
                 DangKiLopHocToolStripMenuItem.Visible = false;
                 frmWelcome f = new frmWelcome();
                 AddForm(f);
@@ -120,6 +119,18 @@ namespace ManageStudentsProject
         private void NopBaiTapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var f = new frmHomeWorkOfStudent(taikhoan);
+            AddForm(f);
+        }
+
+        private void ChamDiemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmChamDiem();
+            AddForm(f);
+        }
+
+        private void doiMatKhauToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var f = new frmDoiMatKhau(taikhoan);
             AddForm(f);
         }
     }

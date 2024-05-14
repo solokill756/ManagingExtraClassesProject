@@ -38,7 +38,11 @@ namespace ManageStudentsProject
         private void button2_Click(object sender, EventArgs e)
         {
             new frmSinhVien(null).ShowDialog();
+            txtTuKhoa.Text = "";
+            tukhoa = "";
+            classType.SelectedIndex = -1;
             loadDSSV();
+         
         }
 
         private void loadDSSV()
@@ -99,6 +103,8 @@ namespace ManageStudentsProject
                 var mhs = dgvSinhVien.Rows[e.RowIndex].Cells["id"].Value.ToString();
                 new frmSinhVien(mhs).ShowDialog();
                 loadDSSV();
+                txtTuKhoa.Text = "";
+                classType.SelectedIndex = -1;
 
             }
             

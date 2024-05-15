@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,22 @@ namespace ManageStudentsProject
                     MessageBox.Show("Lớp này chưa mở đăng ký vui lòng quay lại sau");
                     return;
                 }
+                //try
+                //{
+                //    // Assuming dgvBaiTap is your DataGridView and e is your DataGridViewCellEventArgs
+                //    string dateEndString = dgvDSLopChuaDangKy.Rows[e.RowIndex].Cells[""].Value.ToString().ToString();
+                //    DateTime dateEnd = DateTime.ParseExact(dateEndString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                //    if (DateTime.Now > dateEnd)
+                //    {
+                //        MessageBox.Show("Đã quá ngày để nộp bài");
+                //        return;
+                //    }
+                //}
+                //catch (FormatException ex)
+                //{
+                //    // Handle the case where the string cannot be parsed to a DateTime
+                //    MessageBox.Show("Invalid date format: " + ex.Message);
+                //}
                 if (int.Parse(dgvDSLopChuaDangKy.Rows[e.RowIndex].Cells["TyLeDangKy"].Value.ToString().Split('/')[0]) >= int.Parse(dgvDSLopChuaDangKy.Rows[e.RowIndex].Cells["TyLeDangKy"].Value.ToString().Split('/')[1]))
                 {
                     MessageBox.Show("Lớp này đã đầy nên không thể đăng kí thêm");

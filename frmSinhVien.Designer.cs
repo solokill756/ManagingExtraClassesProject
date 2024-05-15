@@ -185,9 +185,8 @@
             // txtage
             // 
             this.txtage.Location = new System.Drawing.Point(245, 335);
-            this.txtage.Mask = "00";
             this.txtage.Name = "txtage";
-            this.txtage.Size = new System.Drawing.Size(67, 26);
+            this.txtage.Size = new System.Drawing.Size(139, 26);
             this.txtage.TabIndex = 20;
             this.txtage.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtage_MaskInputRejected);
             // 

@@ -26,7 +26,7 @@ namespace ManageStudentsProject
             if (dvgDangkiLophoc.Rows[e.RowIndex].Index >= 0)
             {
                 
-               
+                //if()
                 if (DialogResult.Yes == MessageBox.Show("Bạn có muốn Hủy lớp học [ " + dvgDangkiLophoc.Rows[e.RowIndex].Cells["name"].Value.ToString() + " ] ?",
                     "Xác nhận hủy lớp học",
                     MessageBoxButtons.YesNo,
@@ -78,7 +78,6 @@ namespace ManageStudentsProject
             dvgDangkiLophoc.Columns["id"].HeaderText = "Mã Lớp học";
             dvgDangkiLophoc.Columns["name"].HeaderText = "Tên lớp học";
             dvgDangkiLophoc.Columns["status"].HeaderText = "Trạng thái";
-            dvgDangkiLophoc.Columns["TyLeDangKy"].HeaderText = "Số lượng";
             dvgDangkiLophoc.Columns["NgayDangKy"].HeaderText = "Ngày đăng ký";
 
         }
@@ -115,7 +114,7 @@ namespace ManageStudentsProject
             dvgDangkiLophoc.Columns["id"].HeaderText = "Mã Lớp học";
             dvgDangkiLophoc.Columns["name"].HeaderText = "Tên lớp học";
             dvgDangkiLophoc.Columns["status"].HeaderText = "Trạng thái";
-            dvgDangkiLophoc.Columns["soLuong"].HeaderText = "Số lượng";
+            //dvgDangkiLophoc.Columns["soLuong"].HeaderText = "Số lượng";
             dvgDangkiLophoc.Columns["NgayDangKy"].HeaderText = "Ngày đăng ký";
         }
     }

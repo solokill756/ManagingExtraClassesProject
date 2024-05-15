@@ -15,6 +15,7 @@ namespace ManageStudentsProject
     {
         private string stt;
         private string linkNopBai;
+        private string Mark = "";
         public frmChiTietBaiNopCuaHS(string stt)
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace ManageStudentsProject
             toolTip.SetToolTip(txtLinkBaiTap, r["linkNopBai"].ToString());
             txtLinkBaiTap.Text = "Link bài tập của" + txtTenHocSinh.Text.ToString();
             txtDiem.Text = r["Diem"].ToString();
+            Mark = r["Diem"].ToString(); 
             if (!string.IsNullOrEmpty(txtDiem.Text.ToString()))
             {
                 btnGuiDiem.Text = "Sửa Điểm";
@@ -75,7 +77,7 @@ namespace ManageStudentsProject
                 SqlValue = diem.ToString(),
                 SqlDbType = SqlDbType.NVarChar,
             });
-            if (string.IsNullOrEmpty(txtDiem.Text.ToString()))
+            if (string.IsNullOrEmpty(Mark))
             {
 
                 var rs = new DataBase().ExeCute(sql, lstPara);
